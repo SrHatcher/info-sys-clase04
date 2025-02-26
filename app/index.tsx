@@ -4,7 +4,9 @@ import "./global.css"
 import { Link, Redirect } from 'expo-router'
 
 const index = () => {
-  return <Redirect href='/(stack)/home'/>
+  /*return <Redirect href='/(stack)/home'/>*/
+  /*return <Redirect href='/tabs/home' />*/
+  return <Redirect href='/drawer'/>
 
   /*return (
     <SafeAreaView>

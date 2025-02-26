@@ -5,17 +5,17 @@ import { Stack } from 'expo-router'
 const StackLayout = () => {
   return (
     <Stack screenOptions={{
-        headerShown: true,
-        headerShadowVisible: false,
+        headerShown: false,
+        headerShadowVisible: true,
         contentStyle: {
             backgroundColor: 'white',
         }
     }}>
-        <Stack.Screen name='home' options={{
-            title: 'inicio'
+        <Stack.Screen name='home/index' options={{
+            title: 'Inicio'
         }}/>
-        <Stack.Screen name='products/[id]' options={{
-            title: 'detalle del producto'
+        <Stack.Screen name='products/index' options={{
+            title: 'Detalles de productos'
         }}/>
         <Stack.Screen name='profile/index' options={{
             title: 'holaaa'
