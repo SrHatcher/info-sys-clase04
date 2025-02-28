@@ -1,10 +1,21 @@
 import { View, Text } from 'react-native'
 import React from 'react'
 import { SafeAreaView } from 'react-native-safe-area-context'
-import { Link, router } from 'expo-router'
+import { Link, router, useNavigation } from 'expo-router'
 import CustomButton from '@/components/shared/CustomButton'
+import { DrawerActions } from '@react-navigation/native'
 
 const HomeScreen = () => {
+
+  const navigation = useNavigation()
+
+  const onToggleTab = () => {
+    navigation.dispatch(DrawerActions.toggleDrawer)
+
+    return null
+  }
+
+
   return (
     <SafeAreaView>
       <View className='px-10 flex gap-2 mt-10'>
@@ -16,10 +27,10 @@ const HomeScreen = () => {
             <CustomButton color='primary'>Productos LInk</CustomButton>
           </Link>*/}
 
-        <CustomButton color='secondary' onPress={()=> router.push('/tabs/products')}>Productos</CustomButton>
-        <CustomButton color='tertiary'  onPress={()=> router.push('/tabs/profile')}>Perfil</CustomButton>
-        <CustomButton color='primary' variant='text-only' onPress={()=> router.push('/tabs/settings')}>Configuracion</CustomButton>
-        <CustomButton color='primary' variant='text-only' onPress={()=> router.push('/tabs/home')}>Inicio</CustomButton>
+        <CustomButton color='secondary' onPress={()=> router.push('/products')}>Productos</CustomButton>
+        <CustomButton color='tertiary'  onPress={()=> router.push('/profile')}>Perfil</CustomButton>
+        <CustomButton color='primary' variant='text-only' onPress={()=> router.push('/settings')}>Configuracion</CustomButton>
+        <CustomButton onPress={onToggleTab}>Abrir Menu</CustomButton>
       </View>
     </SafeAreaView>
   )

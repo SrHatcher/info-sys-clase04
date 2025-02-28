@@ -29,6 +29,7 @@ const TabsLayout = () => {
       }}/>
       <Tabs.Screen name='(stack)' options={{
         title: 'Stack',
+        headerShown: false,
         tabBarIcon: ({color, size})=>(
           <FontAwesome name='android' color={color} size={size}/>
         )

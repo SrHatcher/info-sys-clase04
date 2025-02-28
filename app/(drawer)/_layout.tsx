@@ -12,10 +12,19 @@ const DrawerLayout = () => {
       overlayColor: 'rgba(0,0,0,6)',
       drawerActiveTintColor: 'indigo',
       headerShadowVisible: false,
+      headerShown: false,
       sceneStyle: {
         backgroundColor: "white"
       }
     }}>
+      <Drawer.Screen 
+        name='(tabs)'
+        options={{
+          drawerLabel: "Inicio",
+          title: "Inicio",
+          drawerIcon: ({color, size})=><Ionicons name='home' size={size} color={color}/> 
+        }}
+      />
       <Drawer.Screen 
         name='user/index'
         options={{
