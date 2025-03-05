@@ -1,4 +1,4 @@
-import { View, Text } from 'react-native'
+import { View, Text, Pressable } from 'react-native'
 import React from 'react'
 import { router, Stack, useNavigation } from 'expo-router'
 import { Ionicons } from '@expo/vector-icons'
@@ -24,7 +24,7 @@ const StackLayout = () => {
         contentStyle: {
             backgroundColor: 'white',
         },
-        headerLeft: (({tintColor, canGoBack})=> <Ionicons onPress={()=>onHeaderLeftTap(canGoBack)} name={canGoBack ? "arrow-back-circle-outline" : "menu"} size={20} className='mr5'/>)
+        headerLeft: (({tintColor, canGoBack})=> <Pressable> <Ionicons onPress={()=>onHeaderLeftTap(canGoBack)} name={canGoBack ? "add-circle" : "menu"} size={40} className='mr5'/> </Pressable>)
     }}>
         <Stack.Screen name='home/index' options={{
             title: 'Inicio'
